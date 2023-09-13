@@ -1,9 +1,9 @@
 {
-    "name": "laravel-admin-ext/org_rbac",
+    "name": "laravel-admin-extend/org_rbac",
     "description": "description...",
     "type": "library",
     "keywords": ["laravel-admin", "extension"],
-    "homepage": "https://github.com/laravel-admin-ext/org_rbac",
+    "homepage": "https://github.com/laravel-admin-extend/org_rbac",
     "license": "MIT",
     "authors": [
         {

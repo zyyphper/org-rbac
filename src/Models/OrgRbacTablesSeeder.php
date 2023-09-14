@@ -1,19 +1,11 @@
 <?php
 
-namespace Encore\Admin\Models;
+namespace Encore\OrgRbac\Models;
 
-use Encore\OrgRbac\Models\Company;
-use Encore\OrgRbac\Models\Department;
-use Encore\OrgRbac\Models\Duty;
 use Encore\OrgRbac\Models\Enums\BootStatus;
 use Encore\OrgRbac\Models\Enums\DepartmentType;
 use Encore\OrgRbac\Models\Enums\IsAdmin;
 use Encore\OrgRbac\Models\Enums\MenuType;
-use Encore\OrgRbac\Models\Menu;
-use Encore\OrgRbac\Models\Platform;
-use Encore\OrgRbac\Models\Role;
-use Encore\OrgRbac\Models\User;
-use Encore\OrgRbac\Models\UserInfo;
 use Illuminate\Database\Seeder;
 
 class OrgRbacTablesSeeder extends Seeder

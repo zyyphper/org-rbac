@@ -124,6 +124,8 @@ class OrgRbacTablesSeeder extends Seeder
                 'is_admin'  => IsAdmin::YES,
                 'type'      => MenuType::MENU
             ],
+        ]);
+        Menu::insert([
             [
                 'parent_id' => 2,
                 'order'     => 2,

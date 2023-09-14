@@ -19,14 +19,14 @@ return [
         'users_primary_key_generate_driver' => \Encore\OrgRbac\Services\SnowFlakeService::class,
 
         // Menu table and model.
-        'menu_table' => 'admin_menu',
+        'menu_table' => 'base_menu',
         'menu_model' => \Encore\OrgRbac\Models\Menu::class,
         'platform_menu_table' => 'platform_menu',
         'platform_menu_model'    => \Encore\OrgRbac\Models\PlatformMenu::class,
         'platform_menu_tree' => \Encore\OrgRbac\Models\Tree\PlatformMenu::class,
 
         //Platform tables and model
-        'platforms_table' => 'admin_platforms',
+        'platforms_table' => 'base_platforms',
         'platforms_model' => \Encore\OrgRbac\Models\Platform::class,
         'platforms_tree' => \Encore\OrgRbac\Models\Tree\Platform::class,
         'platforms_primary_key_generate_driver' => \Encore\OrgRbac\Services\SnowFlakeService::class,

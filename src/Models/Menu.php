@@ -3,14 +3,43 @@
 namespace Encore\OrgRbac\Models;
 
 
-use Encore\Admin\Models\Menu AS BaseMenu;
+use Encore\Admin\Traits\DefaultDatetimeFormat;
+use Encore\Admin\Traits\ModelTree;
 use Encore\OrgRbac\Models\Enums\MenuType;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\DB;
 
-class Menu extends BaseMenu
+/**
+ * Class Menu.
+ *
+ * @property int $id
+ *
+ * @method where($parent_id, $id)
+ */
+class Menu extends Model
 {
+    use DefaultDatetimeFormat,
+        ModelTree {
+        ModelTree::boot as treeBoot;
+    }
     protected $fillable = ['parent_id', 'order', 'title', 'icon', 'uri','type'];
+
+    /**
+     * Create a new Eloquent model instance.
+     *
+     * @param array $attributes
+     */
+    public function __construct(array $attributes = [])
+    {
+        $connection = config('org.database.connection') ?: config('database.default');
+
+        $this->setConnection($connection);
+
+        $this->setTable(config('org.database.menu_table'));
+
+        parent::__construct($attributes);
+    }
 
     public function child()
     {
@@ -53,5 +82,15 @@ class Menu extends BaseMenu
 
 
         return $query->selectRaw('*, '.$orderColumn.' ROOT')->orderByRaw($byOrder)->get()->toArray();
+    }
+
+    /**
+     * Detach models from the relationship.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        static::treeBoot();
     }
 }

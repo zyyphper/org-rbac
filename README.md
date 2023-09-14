@@ -17,5 +17,9 @@ Open `http://localhost/admin/` in browser,use username `admin` and password `adm
 Encore\OrgRbac\Layout\Content
 ```
 During the development process, the Content class provided by the current component needs to be used
+```
+config/admin/auth.providers.admin.model >> \Encore\OrgRbac\Models\User::class
+```
+In the configuration file of admin, it is necessary to change the object provision of the user model to the user model provided by the current component
 
 Some bugs in laravel-admin can be directly solved by using the current component's secondary encapsulation class

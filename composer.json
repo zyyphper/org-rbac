@@ -27,7 +27,10 @@
         "laravel": {
             "providers": [
                 "Encore\\OrgRbac\\OrgRbacServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "OrgRbac": "Encore\\OrgRbac\\Facades\\OrgRbac"
+            }
         }
     }
 }

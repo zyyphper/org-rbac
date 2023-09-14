@@ -5,21 +5,21 @@ namespace Encore\OrgRbac\Console;
 use Encore\OrgRbac\Facades\OrgRbac;
 use Illuminate\Console\Command;
 
-class DutyCommand extends Command
+class InitCommand extends Command
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $signature = 'orgRbac:duty';
+    protected $signature = 'orgRbac:init';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Show the org admin menu';
+    protected $description = 'Init organization rbac system';
 
     /**
      * Execute the console command.
@@ -28,8 +28,12 @@ class DutyCommand extends Command
      */
     public function handle()
     {
-        $duty = OrgRbac::duty();
+        $this->call('migrate');
 
-        echo json_encode($duty, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), "\r\n";
+        $platformModel = config('org.database.platforms_model');
+
+        if ($platformModel::count() == 0) {
+            $this->call('db:seed', ['--class' => \Encore\Admin\Models\OrgRbacTablesSeeder::class]);
+        }
     }
 }

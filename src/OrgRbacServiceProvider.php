@@ -12,7 +12,7 @@ class OrgRbacServiceProvider extends ServiceProvider
      */
     protected $commands = [
         Console\MenuCommand::class,
-        Console\DutyCommand::class
+        Console\InitCommand::class
     ];
     /**
      * {@inheritdoc}

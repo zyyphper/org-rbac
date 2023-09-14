@@ -33,7 +33,7 @@ class InitCommand extends Command
         $platformModel = config('org.database.platforms_model');
 
         if ($platformModel::count() == 0) {
-            $this->call('db:seed', ['--class' => \Encore\Admin\Models\OrgRbacTablesSeeder::class]);
+            $this->call('db:seed', ['--class' => \Encore\OrgRbac\Models\OrgRbacTablesSeeder::class]);
         }
     }
 }

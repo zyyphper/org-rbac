@@ -90,7 +90,7 @@ class CreateOrgTables extends Migration
             $table->timestamps();
         });
         Schema::create(config('org.database.duties_table'), function (Blueprint $table) {
-            $table->integer('id');
+            $table->increments('id');
             $table->bigInteger('user_id');
             $table->bigInteger('department_id');
             $table->tinyInteger('department_type')->default(1);
@@ -98,7 +98,7 @@ class CreateOrgTables extends Migration
             $table->timestamps();
         });
         Schema::create(config('org.database.roles_table'), function (Blueprint $table) {
-            $table->integer('id');
+            $table->increments('id');
             $table->bigInteger('platform_id');
             $table->string('name',50);
             $table->string('slug',50);

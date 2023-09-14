@@ -13,4 +13,9 @@ After run command you can load basic database data.
 
 Open `http://localhost/admin/` in browser,use username `admin` and password `admin` to login.
 
+```
+Encore\OrgRbac\Layout\Content
+```
+During the development process, the Content class provided by the current component needs to be used
 
+Some bugs in laravel-admin can be directly solved by using the current component's secondary encapsulation class

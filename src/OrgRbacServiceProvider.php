@@ -27,11 +27,17 @@ class OrgRbacServiceProvider extends ServiceProvider
             $this->loadViewsFrom($views, 'org_rbac');
         }
 
+
         if ($this->app->runningInConsole() && $assets = $extension->assets()) {
             $this->publishes(
                 [$assets => public_path('vendor/laravel-admin-ext/org_rbac')],
                 'org_rbac'
             );
+        }
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([__DIR__.'/../config' => config_path()], 'laravel-admin-config');
+            $this->publishes([__DIR__.'/../database/migrations' => database_path('migrations')], 'laravel-admin-migrations');
         }
 
         $this->app->booted(function () {

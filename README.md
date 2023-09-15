@@ -23,3 +23,6 @@ config/admin/auth.providers.admin.model >> \Encore\OrgRbac\Models\User::class
 In the configuration file of admin, it is necessary to change the object provision of the user model to the user model provided by the current component
 
 Some bugs in laravel-admin can be directly solved by using the current component's secondary encapsulation class
+
+<img width="1120" alt="屏幕截图 2023-09-15 110720" src="https://github.com/zyyphper/org-rbac/assets/140879077/6ea22ab4-4934-4bf8-992d-a06ab6420121">
+

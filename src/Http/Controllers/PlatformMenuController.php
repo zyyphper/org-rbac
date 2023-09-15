@@ -46,7 +46,7 @@ class PlatformMenuController extends Controller
      */
     protected function treeView()
     {
-        $menuModel = config('admin.database.platform_menu_tree');
+        $menuModel = config('org.database.platform_menu_tree');
 
         $tree = new Tree(new $menuModel());
 

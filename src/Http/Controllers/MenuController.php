@@ -66,7 +66,7 @@ class MenuController extends AdminController
      */
     protected function treeView()
     {
-        $menuModel = config('admin.database.menu_model');
+        $menuModel = config('org.database.menu_model');
 
         $tree = new Tree(new $menuModel());
 
